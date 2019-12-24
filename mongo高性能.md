@@ -6,6 +6,7 @@ MongoDB是NoSQL的一种，它是面向文档存储。为什么使用MongoDB？�
 3. 处理大数据
 
 ### 1. 保存，更新，查找
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
 **save:**
 
@@ -67,6 +68,27 @@ MongoDB的数据存储在document中，它是类似JSON的数据结构，由“�
 
 //todo
 
+### 4. mongo 性能测试
+
+#### 4.1 单机mongo tps/qps 性能测试
+鉴于了解较少，我们先简单的测试工具来测试mongo单机写入能力，于是找到了**mongo-mload**(三年前更新的代码，但是不影响简单的测试)
+
+插入1000000条数据，mongo tps性能
+
+![mongostat单机](./mongostat单机.png) 
+
+对数据进行查询，mongo qps性能
+
+![单机mongostat_qps数据](./单机mongostat_qps数据.png)
+
+#### 4.2 sharding mongo tps/qps 性能测试
+
+
+
+
+
+
+
 ### 5.分区(分片)数据库
 
 在Mongodb里面存在另一种集群，就是分片技术,可以满足MongoDB数据量大量增长的需求。
@@ -84,6 +106,11 @@ Shard Server 4：27023
 Config Server ：27100
 Route Process：40000
 ```
+mongo分片集群：
+
+![mongo分片集群](./mongo分片集群.png)
+
+
 #### 5.1 启动Shard Server
 ```
 mkdir -p /www/mongoDB/shard/s0
@@ -116,3 +143,7 @@ mongod --port 27100 --dbpath=/www/mongoDB/shard/config --logpath=/www/mongoDB/sh
 
 
 // 深入浅出mongodb的设计与实现 https://yq.aliyun.com/articles/54424
+
+// mongo（mongostate工具） 运作状态，性能监控分析  http://m.myexception.cn/go/1998284.html
+
+// mongo-mload工具 https://github.com/eshujiushiwo/mongo-mload
