@@ -73,10 +73,42 @@ MongoDB的数据存储在document中，它是类似JSON的数据结构，由“�
 
 当MongoDB存储海量的数据时，一台机器可能不足以存储数据，也可能不足以提供可接受的读写吞吐量。这时，我们就可以通过在多台机器上分割数据，使得数据库系统能存储和处理更多的数据。
 
+我么接下来操作一个分片实例：
 
+#### 5.0 分片端口分布
+```
+Shard Server 1：27020
+Shard Server 2：27021
+Shard Server 3：27022
+Shard Server 4：27023
+Config Server ：27100
+Route Process：40000
+```
+#### 5.1 启动Shard Server
+```
+mkdir -p /www/mongoDB/shard/s0
+mkdir -p /www/mongoDB/shard/s1
+mkdir -p /www/mongoDB/shard/s2
+mkdir -p /www/mongoDB/shard/s3
+mkdir -p /www/mongoDB/shard/log
+mongod --port 27020 --dbpath=/www/mongoDB/shard/s0 --logpath=/www/mongoDB/shard/log/s0.log --logappend --fork
+....
+mongod --port 27023 --dbpath=/www/mongoDB/shard/s3 --logpath=/www/mongoDB/shard/log/s3.log --logappend --fork
 
+```
+#### 5.2 启动Config Server
+```
+mkdir -p /www/mongoDB/shard/config
+mongod --port 27100 --dbpath=/www/mongoDB/shard/config --logpath=/www/mongoDB/shard/log/config.log --logappend --fork
 
+```
 
+#### 5.3 启动Route Process
+```
+/usr/bin/mongos --port 40000 --configdb conf/localhost:27100 --fork --logpath=/www/mongoDB/shard/log/route.log  &
+```
+
+#### 5.4 配置Sharding
 
 
 
