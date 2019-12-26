@@ -147,3 +147,6 @@ mongod --port 27100 --dbpath=/www/mongoDB/shard/config --logpath=/www/mongoDB/sh
 // mongo（mongostate工具） 运作状态，性能监控分析  http://m.myexception.cn/go/1998284.html
 
 // mongo-mload工具 https://github.com/eshujiushiwo/mongo-mload
+
+
+//mongo分片概念和原理 https://blog.51cto.com/13941177/2309939 
