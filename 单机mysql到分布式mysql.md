@@ -283,6 +283,8 @@ https://www.jianshu.com/p/c2d8f2bbcb6f
 
 
 
+
+
 ## 99.参考资料
 
 再有人问你分布式事务，把这篇扔给他   https://juejin.im/post/5b5a0bf9f265da0f6523913b
@@ -298,7 +300,6 @@ MySQL 分库分表方案，总结的非常好！ https://juejin.im/entry/5b5eb7f
 
 
 ## 100. mysql 45讲
-
 ### 1.基础架构:一条SQL查询语句是如何执行的?
 
 ![mysql架构](./mysql架构.png)
