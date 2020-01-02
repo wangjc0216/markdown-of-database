@@ -196,8 +196,9 @@ select * from user where id in(ids) and sex = 1;
 ### 4.6 分布式事务
 
 
+可参考相关分布式事务的处理
 
-
+2PC 
 
 
 
