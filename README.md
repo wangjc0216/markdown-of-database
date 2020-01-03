@@ -17,29 +17,12 @@
 
 ## content
 
-### [分布式数据库](./分布式数据库.md)
+### [分布式数据库概述](./分布式数据库概述.md)
 
-可读性：较差
+一般
 
 tag： 数据库 数据仓库 olap oltp
 
-### [单机mysql到分布式mysql](./单机mysql到分布式mysql.md) 
-
-可读性： 较差
-
-tags： 单机mysql  分布式mysql  分布式事务 acid  cap  base
-
-### [mongo性能验证](./mongo高性能.md)
-
-可读性：较差
-
-tag： mongo mongostat go测试代码
-
-### [redis性能验证](./redis高性能.md)
-
-可读性：较差
-
-tag：redis go测试代码
 
 ### [数据库分片策略](./database分片策略.md)
 
@@ -47,8 +30,45 @@ tag：redis go测试代码
 
 tags: 分片策略 分片场景 分片sql问题
 
+
+### [数据库并发机制](./数据库并发机制.md)
+
+可读性： 一般
+
+tags：悲观锁，乐观锁，mvcc
+
+
+### [分布式事务](./分布式事务.md)
+
+可读性：一般 
+
+tags： 两阶段提交，2PC，ACID，BASE，CAP
+
+
+### [单机mysql到分布式mysql](./单机mysql到分布式mysql.md) 
+
+可读性： 较差
+
+tags： 单机mysql  分布式mysql  分布式事务 acid  cap  base
+
+
+### [mongo性能验证](./mongo高性能.md)
+
+可读性：较差
+
+tag： mongo mongostat go测试代码
+
+
+### [redis性能验证](./redis高性能.md)
+
+可读性：较差
+
+tag：redis go测试代码
+
+
 ### [分布式存储高性能](./分布式存储高性能.md)
 
 可读性：较差
 
 tags：分布式存储 高性能  
+
